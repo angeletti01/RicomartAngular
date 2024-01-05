@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Customer Directory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./customer-list.component.css">
+        <script src="./customer-list.component.ts"></script>
+    </head>
+    <body class="bg">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">RicoMart</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right" style="display: inline;">
+                <li>
+                    <a  routerLink="/welcome"> Welcome <span
+                            class="glyphicon glyphicon-bell"></span></a>
+                </li>
+                <li>
+                    <a  routerLink="/home"> Home <span
+                            class="glyphicon glyphicon-home"></span></a>
+                </li>
+                <li>
+                    <a  routerLink="/register"> Register <span
+                            class="glyphicon glyphicon-user"></span></a>
+                </li>
+                <li>
+                    <a  routerLink="/login"> Login <span
+                            class="glyphicon glyphicon-log-in"></span></a>
+                </li>
+                <li class="active">
+                    <a routerLink="/list-customers">Customer List</a>
+                </li>
+            </ul>
+        </div>
+        </nav>       
+<div class="container">
+    
+        <div class="jumbotron" style="margin-top: 50px;">
+            <h2> Customer Directory</h2>       
+    </div>
+    <div class="row">
+        <div *ngFor="let customers of customer" class="col-md-6 col-xl-3">            
+            <div class="card m-b-30" style="opacity: 0.7;">
+                <div class="card-body row">
+                    <div class ="col-6">
+                        <a href=""><img src="{{imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                    </div>
+                   
+                    <ul >
+                        <p style="text-align: left; font-weight: bold;">Username: {{customers?.username}}</p>
+                        <p style="text-align: left;"> Customer ID#: {{customers?.customerId}}</p>
+                        <li><i class="fa fa-user float-right"></i> Customer First Name: {{customers?.firstName}}</li><br>
+                        <li><i class="fa fa-user float-right"></i> Customer Last Name: {{customers?.lastName}}</li><br>   
+                        <li><i class="fa fa-user float-right"></i> Customer Email: {{customers?.email}}</li> <br>   
+                        <li><i class="fa fa-user float-right"></i> Customer Phone: {{customers?.phone}}</li><br>
+                        <li><i class="fa fa-user float-right"></i> Customer Address: {{customers.address}}</li><br>
+                    
+                    </ul>
+                </div>
+            </div>           
+        </div>
+    </div>
+</div>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    </body>
+</html>
